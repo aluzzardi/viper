@@ -1174,6 +1174,7 @@ func readAsCSV(val string) ([]string, error) {
 	}
 	stringReader := strings.NewReader(val)
 	csvReader := csv.NewReader(stringReader)
+	csvReader.LazyQuotes = true
 	return csvReader.Read()
 }
 
